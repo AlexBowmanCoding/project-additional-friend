@@ -1,0 +1,43 @@
+hello
+
+my name is AI
+what is your name
+
+
+
+
+
+
+
+
+
+I wonder why the unknown error is occurring that text
+dare I wrote that text
+that's where the thing is a little weird
+it's kind of bad
+how often does a pickup on the text
+okay so I'll just do this for a little bit then pause then talk again
+okay that's weird
+an error occurred because like
+it doesn't hear
+how do you noise
+I think I'm going to stop spamming the console up for that
+maybe just do this by itself just put like return
+so now what
+so sitting in silence doesn't do anything well I think I just created a bigger time delay didn't I
+nothing
+it's not that big of a time delay but it's still a time delay
+no I think we could probably delete a
+but it's probably going to Output nothing as everything now
+nope doesn't do it cuz I set the time cuz I checked for that
+that should work
+okay so is it working consistently now
+I bet it is oh it didn't hear that or that where is it at right now it's still listening what if I
+so how about now
+is it working correctly
+it kind of seems like it does then it tapers off
+I wonder what that unknown error is
+nope never mind
+well that was weird it gave me an okay it gave me unknown error for okay
+I think it's probably fine the way it is now
+it's a little slow though like if I put a big gap who knows what's going to happen here is it going to add on to what it was before
