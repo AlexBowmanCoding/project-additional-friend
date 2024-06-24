@@ -1,12 +1,17 @@
-import speech_recognition as sr 
+
+import speech_recognition as sr
 import pyttsx3
 import discord
-
-
-
+# used to access the .env file
+import os
+from dotenv import load_dotenv
+# used to access the generative ai model
 import google.generativeai as genai
-##genai.configure(api_key=os.environ["API_KEY"])
-genai.configure(api_key="AIzaSyCw6yWtxj0HlyNzVld2mvQPhqHvAq2t_pc")
+
+load_dotenv()
+API_KEY = os.getenv('API_KEY')
+
+genai.configure(api_key=API_KEY)
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
@@ -18,8 +23,6 @@ def SpeakText(command):
     engine.setProperty('voice', voices[1].id)
     engine.say(command)
     engine.runAndWait()
-     
-
 
 def record_text():
     while(1):
@@ -32,31 +35,32 @@ def record_text():
                 audio2 = r.listen(source2)
 
                 MyText = r.recognize_google(audio2)
-            print("text sent")
+
+                print("text sent:", MyText)
             return MyText
-            
+
         except sr.RequestError as e:
             print("Could not request results; {0}".format(e))
-            
+
         except sr.UnknownValueError:
             print("Unknown error")
         return
-    return 
+    return
 
 def send_to_gemini(message):
     response = model.generate_content(message, generation_config=genai.GenerationConfig(
-        max_output_tokens= 50, 
+        max_output_tokens= 50,
         temperature=1,
     ))
     print("response generated")
     return response
 
-prompt = "using only dialouge and no descriptors Act as a someone in a discord voice call responding to this being told to her "
+prompt = "using only dialouge and no descriptors Act as a someone in a discord voice call responding to this being told to her"
 
 while(1):
 
     text = record_text()
-    
+
     if text != None:
         text = prompt + text
         response = send_to_gemini(text)
